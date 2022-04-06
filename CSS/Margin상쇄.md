@@ -50,19 +50,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>margin</title>
     <style>
-      div {
-        width: 100px;
-        height: 100px;
-        border: 1px solid black;
-      }
       .parent {
         background-color: yellow;
-        margin-bottom: 60px; /* 부모의 margin 상쇄 */
       }
       .child {
         width: 100px;
         height: 100px;
-        margin-top: 50px; /* 자식만 적용 */
+        margin-top: 50px; /* 부모 요소를 뚫고 margin이 발생 */
         background-color: red;
       }
     </style>
@@ -77,7 +71,7 @@
 
 - 결과
 <div align="center">
-    <img src="images/마진상쇄2.png" width="500">
+    <img src="images/마진상쇄4.png" width="500">
 </div><br>
 => 다음과 같이 부모의 영역을 뚫고 자식의 마진이 발생된 것을 확인할 수 있다.<br><br>
 
@@ -119,7 +113,7 @@
 ## 해결책
 
 1. 인접 요소 간 => 마진이 상쇄된 요소에 `display: inline-block;`
-2. 부모 자식 요소 간 => 부모에 `position: relative;` 자식에 `position: absolute`
+2. 부모 자식 요소 간 => 부모에 `overflow: hidden;`
 3. 빈 블록 => 빈 블록에 `display: inline-block;` 혹은 margin, height, padding 등 속성값을 부여
 
 **해결책 같이 고민해보기!!**
