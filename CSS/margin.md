@@ -1,12 +1,13 @@
 # margin
 
 - ## 100% vs auto
+
   > - ### 100%
   >   가장 가까운 부모 요소를 기준으로 전체를 차지한다. **padding, margin 등을 고려하지 않고 100% 크기를 차지**한다. => padding, margin을 주면 밀려난다.
 
-> - ### auto
->   height: 자식 콘텐츠 크기만큼 차지<br>
->   width: 직계 부모의 콘텐츠 크기만큼 가득찬다.<br> > **auto는 padding, margin 등을 고려하여 차지**한다. 밀려나지 않아 유연하다.
+  > - ### auto
+  >   height: 자식 콘텐츠 크기만큼 차지<br>
+  >   width: 직계 부모의 콘텐츠 크기만큼 가득찬다.<br> > **auto는 padding, margin 등을 고려하여 차지**한다. 밀려나지 않아 유연하다.
 
 - ## flexbox + margin
 
