@@ -76,6 +76,44 @@
 
   - 결론: 불가능하다. 따라서, **생성자 함수와 클로저를 같이 사용**한다.<br><br>
 
-- ## 사용자 정의 타입 패턴 + 클로저
+- ## 모듈 패턴 + 사용자 정의 타입 패턴 + 클로저
+
+  ```javascript
+  function Person() {
+    let name = "Yoo";
+
+    // 클로저 생성
+    function innerPersonType() {}
+
+    innerPersonType.prototype.getName = function () {
+      return name;
+    };
+
+    return innerPersonType;
+  }
+
+  const Yoo = new Person();
+  const yoo = new Yoo();
+  console.log(yoo.getName()); // Yoo
+  console.log(yoo.name); // undefined, 오로지 프로토타입 메서드로만 접근이 가능하다.
+  ```
+
+  ```javascript
+  // 위의 예시를 즉시 실행 함수로 바꿔보았다.
+  const Yoo = (function () {
+    let name = "Yoo";
+
+    // 클로저
+    function innerPersonType() {}
+    innerPersonType.prototype.getName = function () {
+      return name;
+    };
+    return innerPersonType;
+  })();
+
+  const yoo = new Yoo();
+  console.log(yoo.getName()); // Yoo
+  console.log(Yoo.name); // undefined
+  ```
 
 - ### 참조: https://velog.io/@recordboy/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AA%A8%EB%93%88-%ED%8C%A8%ED%84%B4
