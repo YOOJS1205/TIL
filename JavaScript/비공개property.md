@@ -41,6 +41,7 @@
         }
     })();
     // 즉시 실행 함수를 사용했으므로, person 변수에 return 값이 담긴다.
+    // 궁금점: return 문 안 객체 메서드는 클로저인가?
 
     person.getName(); // Yoo
     person.sayName(); // 내 이름은 Yoo 입니다.
